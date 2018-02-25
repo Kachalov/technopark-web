@@ -1,5 +1,54 @@
 {% extends "base.html" %}
 
-{% block body %}
+{% block body.content %}
+{% for q in questions %}
+<div class="row mt-3">
+  <div class="col">
+    <div class="card">
+      <div class="row card-body">
+        <div class="col-3 d-flex align-items-center flex-column">
+          <div class="mb-auto">
+            <img src="https://kistriver.com/avatars/{{ q.author }}.png" class="rounded w-100">
+          </div>
+          <div class="btn-group w-100" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-success">+</button>
+            <button class="btn btn-secondary btn-disabled w-100" disabled>{{ q.rating }}</button>
+            <button type="button" class="btn btn-danger">-</button>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start flex-column">
+          <div>
+            <a class="card-title h3" href="/q/{{ q.id }}">{{ q.title }}</a>
+            <p class="card-text">{{ q.desc }}</p>
+          </div>
+          <div class="mt-auto">
+            <a class="btn btn-outline-success" href="/q/{{ q.id }}#answer">Answer
+                <span class="badge badge-secondary">{{ q.answers }}</span></a>
+            Tags:
+            {% for t in q.tags %}
+              <a class="btn btn-outline-secondary" href="/tags/{{ t|urlencode:'' }}">{{ t }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
 
+<div class="row mt-3">
+  <div class="col-5 mx-auto">
+    <nav>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">4</a></li>
+        <li class="page-item"><a class="page-link" href="#">5</a></li>
+        <li class="page-item"><span class="page-link">...</span></li>
+        <li class="page-item"><a class="page-link" href="#">101</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
 {% endblock %}

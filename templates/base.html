@@ -6,7 +6,7 @@
   <meta name="author" content="Alexey Kachalov">
   <link rel="icon" href="/static/favicon.ico">
 
-  <title>{{ title }}</title>
+  <title>{{ title }} | BufferOverflow</title>
 
   <link href="/static/css/bootstrap.min.css" rel="stylesheet">
   <link href="/static/css/fontawesome-all.css" rel="stylesheet">
@@ -81,8 +81,29 @@
 
   <main role="main" class="container">
     {% block body %}
-    <h1 class="mt-5">Hey, buddy, there is no body!</h1>
-    <p class="lead">Looks like someone forgot to update body. So a shame.</p>
+      {% block body.title %}
+        <h1>{{ title }}</h1>
+      {% endblock %}
+      <div class="row">
+        <div class="col">
+          {% block body.content %}
+            <h1 class="mt-5">Hey, buddy, there is no body!</h1>
+            <p class="lead">Looks like someone forgot to update body. So a shame.</p>
+          {% endblock %}
+        </div>
+        <div class="col-3">
+          {% block body.panel %}
+            <p class="h2">Popular tags</p>
+            {% for t in popular_tags %}
+              <a class="btn btn-outline-secondary mb-1" href="/tags/{{ t }}">{{ t }}</a>
+            {% endfor %}
+            <p class="h2">Best members</p>
+            {% for u in best_members %}
+              <a class="btn btn-outline-secondary mb-1" href="/u/{{ u }}">{{ u }}</a>
+            {% endfor %}
+          {% endblock %}
+        </div>
+      </div>
     {% endblock %}
   </main>
 
