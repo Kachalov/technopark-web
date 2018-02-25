@@ -1,0 +1,16 @@
+[[source]]
+
+name = "pypi"
+verify_ssl = true
+url = "https://pypi.python.org/simple"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+django = {version = ">=2.0,<2.1"}
+uwsgi = {version = ">=2.0"}
+psycopg2 = {version = "*"}
