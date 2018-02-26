@@ -20,7 +20,16 @@ def questions(req, p=1):
 
 
 def question(req, q):
-    return render(req, 'questions/question.html')
+    return render(req, 'questions/question.html', {
+        'title': 'Question ' + str(q),
+        'q': dict(id=1, title='Question ' + str(q), desc='Desc', answers='42',
+                  tags=['t1', 't2', 'really long #tag'],
+                  author='Kachalov', rating=12),
+        'comments': [
+            dict(id=x, desc='Desc ' + str(x), author='Kachalov', rating=12)
+            for x in range(1, 10)
+        ],
+    })
 
 
 def new_question(req):

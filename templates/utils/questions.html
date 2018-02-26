@@ -1,4 +1,4 @@
-{% macro question(q) %}
+{% macro question(q, answer=True) %}
 <div class="row mt-3">
   <div class="col">
     <div class="card">
@@ -19,11 +19,13 @@
             <p class="card-text">{{ q.desc }}</p>
           </div>
           <div class="mt-auto">
+            {% if answer %}
             <a class="btn btn-outline-success" href="/q/{{ q.id }}#answer">Answer
                 <span class="badge badge-secondary">{{ q.answers }}</span></a>
+            {% endif %}
             Tags:
             {% for t in q.tags %}
-              <a class="btn btn-outline-secondary" href="/tags/{{ t|urlencode }}">{{ t }}</a>
+              <a class="btn btn-outline-secondary" href="/t/{{ t|urlencode }}">{{ t }}</a>
             {% endfor %}
           </div>
         </div>
