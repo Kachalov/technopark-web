@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+BUILD = os.environ.get('BUILD', 'dev')
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -37,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'questions',
+    'users',
+    'tags',
+    'explore',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +71,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'tags.context_processors.popular_tags',
+                'users.context_processors.best_users',
+                'bufferoverflow.context_processors.app_info',
             ],
         },
     },

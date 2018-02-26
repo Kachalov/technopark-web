@@ -1,8 +1,7 @@
 from django.urls import path
 
-from . import views
+from questions.views import questions as explore_view
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('tags/<tag>', views.tag, name='tag'),
+    path('', explore_view, name='explore'),
 ]
