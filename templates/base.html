@@ -81,18 +81,18 @@
 
   <main role="main" class="container">
     {% block body %}
-      {% block body.title %}
+      {% block body_title %}
         <h1>{{ title }}</h1>
       {% endblock %}
       <div class="row">
         <div class="col">
-          {% block body.content %}
+          {% block body_content %}
             <h1 class="mt-5">Hey, buddy, there is no body!</h1>
             <p class="lead">Looks like someone forgot to update body. So a shame.</p>
           {% endblock %}
         </div>
         <div class="col-3">
-          {% block body.panel %}
+          {% block body_panel %}
             <p class="h2">Popular tags</p>
             {% for t in popular_tags %}
               <a class="btn btn-outline-secondary mb-1" href="/tags/{{ t }}">{{ t }}</a>

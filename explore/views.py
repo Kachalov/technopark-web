@@ -11,6 +11,8 @@ def index(request):
         'build': 'dev',
         'title': 'Explore',
         'login': 'Kachalov',
+        'pages': 11,
+        'page': 4,
         'questions': [
             dict(id=1, title='Question', desc='Desc', answers='42',
                  tags=['t1', 't2', 'really long #tag'],
@@ -29,6 +31,8 @@ def tag(request, tag):
         'build': 'dev',
         'title': '#' + tag,
         'login': 'Kachalov',
+        'pages': 11,
+        'page': 4,
         'questions': [
             dict(id=1, title='Question 2', desc='Desc', answers='1',
                  tags=['tag'], author='Buglight', rating=7),

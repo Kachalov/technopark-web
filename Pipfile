@@ -14,3 +14,4 @@ url = "https://pypi.python.org/simple"
 django = {version = ">=2.0,<2.1"}
 uwsgi = {version = ">=2.0"}
 psycopg2 = {version = "*"}
+jinja2 = {version = ">=2,<3"}
