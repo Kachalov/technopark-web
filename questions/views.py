@@ -6,7 +6,6 @@ from django.shortcuts import render
 def questions(req, p=1):
     return render(req, 'questions/index.html', {
         'title': 'Explore',
-        'login': 'Kachalov',
         'pages': 11,
         'page': 4,
         'questions': [

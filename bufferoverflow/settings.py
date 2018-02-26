@@ -74,6 +74,7 @@ TEMPLATES = [
 
                 'tags.context_processors.popular_tags',
                 'users.context_processors.best_users',
+                'users.context_processors.current_user',
                 'bufferoverflow.context_processors.app_info',
             ],
         },

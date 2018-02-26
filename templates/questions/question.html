@@ -8,9 +8,13 @@
 {% block body_content %}
 {{ question(q, answer=False) }}
 
+<hr />
+
 {% for c in comments %}
   {{ comment(c) }}
 {% endfor %}
+
+<hr />
 
 <form method="post" id="answer">
 <div class="row mt-3">
