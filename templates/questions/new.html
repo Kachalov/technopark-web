@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block body_content %}
+<form action="post">
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <input class="form-control" placeholder="Title">
+      <small class="form-text text-muted">From 8 to 64 symbols length.</small>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <textarea class="form-control" placeholder="Question description" rows="10"></textarea>
+      <small class="form-text text-muted">Up to 5000 symbols length.</small>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <input class="form-control" placeholder="Tags">
+      <small class="form-text text-muted">From 1 to 7 tags.</small>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-2">
+    <button type="submit" class="btn btn-success w-100">Ask</button>
+  </div>
+</div>
+</form>
+{% endblock %}

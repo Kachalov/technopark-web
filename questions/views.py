@@ -21,3 +21,9 @@ def questions(req, p=1):
 
 def question(req, q):
     return render(req, 'questions/question.html')
+
+
+def new_question(req):
+    return render(req, 'questions/new.html', {
+        'title': 'New question',
+    })
