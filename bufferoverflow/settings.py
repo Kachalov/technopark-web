@@ -77,6 +77,7 @@ TEMPLATES = [
                 'users.context_processors.current_user',
                 'bufferoverflow.context_processors.app_info',
             ],
+            'environment': 'bufferoverflow.jinja.environment',
         },
     },
 ]
