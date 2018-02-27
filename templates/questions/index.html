@@ -3,10 +3,14 @@
 {% from "utils/pagination.html" import pagination %}
 {% from "utils/questions.html" import question %}
 
+{% if not view_pagination %}
+{% set view_pagination = url('questions') %}
+{% endif %}
+
 {% block body_content %}
 {% for q in questions %}
   {{ question(q) }}
 {% endfor %}
 
-{{ pagination(page, pages) }}
+{{ pagination(page, pages, view_pagination) }}
 {% endblock %}

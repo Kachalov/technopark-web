@@ -18,6 +18,10 @@ def questions(req, p=1):
     })
 
 
+def hot(req, p=1):
+    return questions(req, p)
+
+
 def question(req, q):
     return render(req, 'questions/question.html', {
         'title': 'Question ' + str(q),

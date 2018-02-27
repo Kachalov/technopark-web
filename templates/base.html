@@ -107,11 +107,11 @@
           {% block body_panel %}
             <p class="h2">Popular tags</p>
             {% for t in popular_tags %}
-              <a class="btn btn-outline-secondary mb-1" href="/t/{{ t }}">{{ t }}</a>
+              <a class="btn btn-outline-secondary mb-1" href="{{ url('tag', args=[t]) }}">{{ t }}</a>
             {% endfor %}
             <p class="h2">Best members</p>
             {% for u in best_members %}
-              <a class="btn btn-outline-secondary mb-1" href="/u/{{ u }}">{{ u }}</a>
+              <a class="btn btn-outline-secondary mb-1" href="#">{{ u }}</a>
             {% endfor %}
           {% endblock %}
         </div>
