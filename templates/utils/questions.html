@@ -15,17 +15,17 @@
         </div>
         <div class="col d-flex align-items-start flex-column">
           <div>
-            <a class="card-title h3" href="/q/{{ q.id }}">{{ q.title }}</a>
+            <a class="card-title h3" href="{{ url('question', args=[q.id]) }}">{{ q.title }}</a>
             <p class="card-text">{{ q.desc }}</p>
           </div>
           <div class="mt-auto">
             {% if answer %}
-            <a class="btn btn-outline-success" href="/q/{{ q.id }}#answer">Answer
+            <a class="btn btn-outline-success" href="{{ url('question', args=[q.id]) }}#answer">Answer
                 <span class="badge badge-secondary">{{ q.answers }}</span></a>
             {% endif %}
             Tags:
             {% for t in q.tags %}
-              <a class="btn btn-outline-secondary" href="/t/{{ t|urlencode }}">{{ t }}</a>
+              <a class="btn btn-outline-secondary" href="{{ url('tag', args=[t]) }}">{{ t }}</a>
             {% endfor %}
           </div>
         </div>
