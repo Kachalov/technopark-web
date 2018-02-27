@@ -1,0 +1,36 @@
+{% macro question(q, answer=True) %}
+<div class="row mt-3">
+  <div class="col">
+    <div class="card">
+      <div class="row card-body">
+        <div class="col-3 d-flex align-items-center flex-column">
+          <div class="mb-auto w-75">
+            <img src="https://kistriver.com/avatars/{{ q.author }}.png" class="rounded w-100">
+          </div>
+          <div class="btn-group w-75" role="group">
+            <button type="button" class="btn btn-success"><i class="fas fa-plus"></i></button>
+            <button class="btn btn-secondary btn-disabled w-75" disabled>{{ q.rating }}</button>
+            <button type="button" class="btn btn-danger"><i class="fas fa-minus"></i></button>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start flex-column">
+          <div>
+            <a class="card-title h3" href="/q/{{ q.id }}">{{ q.title }}</a>
+            <p class="card-text">{{ q.desc }}</p>
+          </div>
+          <div class="mt-auto">
+            {% if answer %}
+            <a class="btn btn-outline-success" href="/q/{{ q.id }}#answer">Answer
+                <span class="badge badge-secondary">{{ q.answers }}</span></a>
+            {% endif %}
+            Tags:
+            {% for t in q.tags %}
+              <a class="btn btn-outline-secondary" href="/t/{{ t|urlencode }}">{{ t }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% from "utils/pagination.html" import pagination %}
+{% from "utils/questions.html" import question %}
+
+{% block body_content %}
+{% for q in questions %}
+  {{ question(q) }}
+{% endfor %}
+
+{{ pagination(page, pages) }}
+{% endblock %}

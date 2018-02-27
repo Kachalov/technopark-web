@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% set title = "Register" %}
+
+{% block body_content %}
+<div class="alert alert-danger" role="alert">
+  Sorry, this e-mail already in use!
+</div>
+
+<form method="post" enctype="multipart/form-data">
+<div class="row">
+  <div class="col-2 text-right">
+    <label for="login">Login</label>
+  </div>
+  <div class="col-8">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-at"></i></span>
+        </div>
+        <input class="form-control" placeholder="Login" id="login" name="login">
+      </div>
+      <small class="form-text text-muted">From 4 to 18 symbols length.</small>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 text-right">
+    <label for="email">E-mail</label>
+  </div>
+  <div class="col-8">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="far fa-envelope"></i></span>
+        </div>
+        <input class="form-control" placeholder="E-mail" id="email" name="nick">
+      </div>
+      <small class="form-text text-muted">From 4 to 128 symbols length.</small>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 text-right">
+    <label for="nick">Nick name</label>
+  </div>
+  <div class="col-8">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <input class="form-control" placeholder="Nick" id="nick" name="nick">
+      </div>
+      <small class="form-text text-muted">From 4 to 18 symbols length.</small>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 text-right">
+    <label for="password">Password</label>
+  </div>
+  <div class="col-8">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+        </div>
+        <input class="form-control" type="password" placeholder="Password" id="password" name="password">
+      </div>
+      <small class="form-text text-muted">From 6 to 100 symbols length.</small>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 text-right">
+    <label for="password2"></label>
+  </div>
+  <div class="col-8">
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+        </div>
+        <input class="form-control" type="password" placeholder="Repeat password" id="password2" name="password2">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-2 text-right">
+    <label for="avatar">Avatar</label>
+  </div>
+  <div class="col-8">
+    <div class="form-group">
+      <input class="form-control" type="file" id="avatar" name="avatar">
+      <small class="form-text text-muted">Up to 5MB image.</small>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 offset-2">
+    <button type="submit" class="btn btn-success w-100">Register</button>
+  </div>
+</div>
+</form>
+{% endblock %}
